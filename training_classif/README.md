@@ -20,8 +20,10 @@ python3 -m venv venv
 ```
 N_EPOCHS = 20 - количество эпох
 
-IMAGE_DIR = '/Volumes/T7/dataset/raw/' - путь до изображений
+IMAGE_DIR = '/dataset/opensource/fruit/train/' - путь до изображений
+
 ```
+Названия папок с изображениями должны называться: 0, 1, 2, 3 и так далее
 
 3. Перед запуском необходимо создать ```labels.csv``` файл с помощью скрипта ```tools/prepare_dataset.py```.
 
