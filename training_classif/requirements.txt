@@ -1,0 +1,11 @@
+opencv-python
+pandas
+scikit-learn
+tensorboard
+timm
+torch
+pytorch_lightning
+torchmetrics
+scikit-multilearn
+onnxruntime
+loguru
