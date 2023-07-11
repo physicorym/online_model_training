@@ -8,7 +8,7 @@ BATCH_SIZE = 32
 N_EPOCHS = 1
 NUM_ITERATION_ON_EPOCH = 100
 
-LABELS_FILE = './data/labels.csv'
+LABELS_FILE = 'C:/Pet_Dev/online_model_training/neurowrap/wrapper/training_classif/data/labels.csv'
 MODEL = './weights/bestmodel.pth'
 
 DEVICE = 'cpu'
