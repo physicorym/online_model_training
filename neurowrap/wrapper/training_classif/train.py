@@ -2,11 +2,11 @@ from torch import nn
 import torch.optim as optim
 import torch
 
-from src.dataset import get_loaders
-from src.models import LitPL, LitResnet
-from src.losses import FocalLoss
-from config import config
-from src.fit import fit
+from wrapper.training_classif.src.dataset import get_loaders
+from wrapper.training_classif.src.models import *
+from wrapper.training_classif.src.losses import FocalLoss
+from wrapper.training_classif.config import config
+from wrapper.training_classif.src.fit import fit
 
 
 

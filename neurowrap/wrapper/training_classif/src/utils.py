@@ -6,10 +6,10 @@ import torch
 from loguru import logger
 
 
-from src.base_config import Config
+from .base_config import Config
 
 
-from config import config
+from wrapper.training_classif.config import config
 
 def preprocessing_image(image):
 

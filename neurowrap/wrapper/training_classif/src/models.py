@@ -5,8 +5,8 @@ from torch import nn
 from torch.nn import functional as F
 import pytorch_lightning as pl
 
-from src.base_config import Config
-from config import config
+from .base_config import Config
+from wrapper.training_classif.config import config
 
 class LitResnet(nn.Module):
     def __init__(self, arch: str, pretrained: bool = True, num_classes: int = 6):

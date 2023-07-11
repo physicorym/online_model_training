@@ -3,9 +3,9 @@ from torch import nn, max, sum
 import torch
 from loguru import logger
 
-from src.utils import search_bestmodel
-from src.base_config import Config
-from config import config
+from .utils import search_bestmodel
+from .base_config import Config
+from wrapper.training_classif.config import config
 
 def fit(config: Config, model, dataset, optimizer, criterion):
     n_epochs = config.N_EPOCHS

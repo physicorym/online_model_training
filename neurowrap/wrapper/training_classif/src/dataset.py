@@ -11,10 +11,10 @@ from torch.utils.data import Dataset
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 
-from src.base_config import Config
+from .base_config import Config
 
 
-from config import config
+from wrapper.training_classif.config import config
 
 class ClassificationDataset(Dataset):
     def __init__(
