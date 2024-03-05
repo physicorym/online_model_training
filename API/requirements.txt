@@ -6,3 +6,11 @@ envparse==0.2.0
 # psycopg2 # ==2.0.10
 asyncpg==0.27.0
 alembic==1.9.0
+python-jose
+python-multipart
+torch
+pandas
+opencv-python
+scikit-learn
+torchvision
+torchmetrics
