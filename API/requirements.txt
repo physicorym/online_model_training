@@ -14,3 +14,4 @@ opencv-python
 scikit-learn
 torchvision
 torchmetrics
+pytorch-lightning
