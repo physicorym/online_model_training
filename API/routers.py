@@ -3,13 +3,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 from passlib.context import CryptContext
-
+import os
 
 from db.models import User, Model
 from db.security import get_current_user
 
 from db.models import ModelResponse, ModelCreate
 from db.dependencies import get_async_db
+
 
 router = APIRouter()
 
@@ -63,3 +64,7 @@ async def models(model: ModelCreate, user: dict = Depends(get_current_user), db:
 async def get_user_models(user_id: int, db: AsyncSession = Depends(get_async_db)):
     models = await db.execute(select(Model).filter(Model.user_id == user_id))
     return [ModelResponse(**model.dict()) for model in models]
+
+@router.get("/train")
+async def train_model():
+    os.system("training_classif/train.py")
