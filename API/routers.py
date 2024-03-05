@@ -3,6 +3,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 from passlib.context import CryptContext
+from fastapi.responses import JSONResponse
+import subprocess
 import os
 
 from db.models import User, Model
@@ -65,6 +67,11 @@ async def get_user_models(user_id: int, db: AsyncSession = Depends(get_async_db)
     models = await db.execute(select(Model).filter(Model.user_id == user_id))
     return [ModelResponse(**model.dict()) for model in models]
 
-@router.get("/train")
+@router.post("/train")
 async def train_model():
-    os.system("training_classif/train.py")
+    try:
+        process = subprocess.run(["python", "training_classif/train.py"], capture_output=True, text=True, check=True)
+
+        return JSONResponse(content={"message": "Скрипт обучения успешно выполнен", "output": process.stdout})
+    except subprocess.CalledProcessError as e:
+        return JSONResponse(content={"message": "Ошибка при выполнении скрипта обучения", "error": e.stderr})
